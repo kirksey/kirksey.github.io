@@ -1,0 +1,434 @@
+/**
+ * GResume: Interactive Google Resume
+ * Author: dhawkey@google.com (Dave Hawkey)
+ * http://go/gresume
+ */
+
+body {
+  color: #484848;
+  font: 1em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  background-color: #524f4b;
+}
+
+.page {
+  position: relative;
+  background-color: #fff;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  min-height: 600px;
+  width: 960px;
+  margin: 30px auto 10px auto;
+}
+
+a {
+  color: #333;
+}
+
+a:hover {
+  color: #555;
+}
+
+h1 {
+  font-size: 1.8em;
+  margin: 0 0 5px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  color: #061224;
+  clear: left;
+}
+
+h1 em {
+    color: #284265;
+    font-style: normal;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin: 0 0 5px;
+    color: #020f1c;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    clear: left;
+}
+
+h2 em {
+  font-style: normal;
+  font-size: 0.9em;
+  color: #333;
+  margin-left: 12px;
+}
+
+h3 {
+    font-size: 1em;
+    margin: 0 0 5px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    color: #191919;
+}
+
+h4 {
+    font-size: 0.7em;
+    margin: 0 0 5px;
+    font-weight: bold;
+    color: #191919;
+}
+
+.blue {
+  color: #0087F7;
+}
+
+.red {
+  color: #E3182D;
+}
+
+.yellow {
+  color: #FFDF00;
+}
+
+.green {
+  color: #12A326;
+}
+
+.bluebg {
+  background-color: #0087F7;
+}
+
+.redbg {
+  background-color: #E3182D;
+}
+
+.yellowbg {
+  background-color: #FFDF00;
+}
+
+.greenbg {
+  background-color: #12A326;
+}
+
+h2.google-logo {
+  width: 95px;
+  height: 284px;
+  background: url('../images/google-logo.png') transparent no-repeat;
+  position: absolute;
+  top: 10px;
+  left: 12px;
+}
+
+h2.google-logo span {
+  display: none;
+}
+
+.name-card {
+  position: absolute;
+  top: 18px;
+  right: 34px;
+  text-align: right;
+}
+
+.boxes {
+  position: absolute;
+  width: 220px;
+  right: 20px;
+  top: 90px;
+  text-align: right;
+}
+
+.box {
+  padding-top: 2px;
+  padding-left: 2px;
+  width: 220px;
+  margin-bottom: 12px;
+  clear: both;
+}
+
+.box .shadow {
+  background-color: #ccc;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.box .content {
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  color: #fff;
+  position: relative;
+  bottom: 2px;
+  right: 2px;
+  padding: 10px;
+}
+
+.box .content:hover {
+  opacity: 0.8;
+}
+
+.box a {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: auto;
+  width: auto;
+  text-decoration: none;
+  color: #191919;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+.box h3 {
+  font-size: 1.2em;
+  margin: 0 0 5px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  margin-bottom: 1.4em;
+}
+
+.box p {
+  font-size: 0.8em;
+  font-weight: normal;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, Arial, sans-serif;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
+}
+
+.quick-links .box {
+  width: 70px;
+  float: left;
+  text-align: center;
+  font-size: 0.8em;
+  clear: none;
+  margin-left: 2px;
+  padding-top: 1px;
+  padding-left: 1px;
+}
+
+.quick-links .box .shadow {
+  padding: 0;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.quick-links .box .content {
+  padding: 0;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  height: 20px;
+  background-color: #555;
+  bottom: 1px;
+  right: 1px;
+}
+
+.quick-links a {
+  color: #fff;
+  padding: 0;
+}
+
+.quick-links a span {
+  vertical-align: middle;
+}
+
+.sections {
+  position: relative;
+  width: 550px;
+  margin-left: 140px;
+  padding-top: 40px;
+}
+
+.section {
+  padding-bottom: 20px;
+}
+
+.section p {
+  font-size: 13px;
+  line-height: 1.5em;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.section h1 {
+  text-shadow: #999 1px 1px;
+}
+
+.section .content {
+  padding-top: 10px;
+}
+
+.details {
+  color: #222;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+.details p {
+  font-size: 13px;
+}
+
+.details li {
+  font-size: 14px;
+  line-height: 1.4em;
+  margin-bottom: 5px;
+  padding-left: 8px;
+  background: 6px 5px no-repeat;
+}
+
+.details div {
+  margin-left: 8px;
+  margin-top: 8px;
+  margin-bottom: 18px;
+  font-size: 13px;
+  position: relative;
+}
+
+.details h3 {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.4em;
+  cursor: pointer;
+}
+
+.details .links {
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 6px;
+}
+
+.details .links li {
+  margin: 0;
+  padding: 0;
+}
+
+.details .links strong {
+  width: 20%;
+  display: inline-block;
+}
+
+.details .links a:hover {
+  color: #888;
+}
+
+.details .collapsed {
+  background-image: url('../images/expand.png');
+  padding-left: 20px;
+}
+
+.details .expanded {
+  background-image: url('../images/collapse.png');
+  padding-left: 20px;
+}
+
+.bio img {
+  margin-bottom: 10px;
+}
+
+.contact li strong {
+  display: block;
+  float: left;
+  width: 6em;
+}
+
+.portfolio {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.portfolio .details {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.portfolio .details .description {
+  font-size: 0.8em;
+  margin-top: 4px;
+}
+
+.portfolio .details img {
+  display: block;
+  margin: 0 auto;
+  height: 350px;
+}
+
+.portfolio ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio li {
+  display: inline-block;
+  margin: 2px 1px 0 1px;
+  padding: 0;
+}
+
+.portfolio li .description {
+  display: none;
+}
+
+.portfolio .selected {
+  border: 1px solid #0070c1;
+  margin: 0;
+}
+
+.portfolio .thumb img {
+  display: block;
+  border: 1px solid #888;
+  width: 80px;
+  height: 80px;
+}
+
+.footer {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-size: 0.8em;
+  color: #3a3a3a;
+  text-shadow: #555 1px 1px;
+  margin-bottom: 10px;
+}
+
+.footer ul li {
+  display: inline;
+  margin-left: 6px;
+  padding-left: 12px;
+  background: url('../images/divider.png') left no-repeat;
+}
+
+.footer ul li.first {
+  background: none;
+}
+
+.footer a {
+  color: #333;
+}
+
+.footer a:hover {
+  text-shadow: #656565 1px 1px;
+}
+
+.footer a.chrome {
+  background: url('../images/chrome-icon.png') left no-repeat;
+  padding-left: 24px;
+  padding-top: 3px;
+}
+
+a.printable {
+  text-decoration: none;
+}
+
+a.printable:hover {
+  text-decoration: underline;
+}
+
+blockquote {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  color: #555;
+  font-size: 12px;
+  width: 80%;
+}
+
+blockquote .quote {
+  font-size: 18px;
+  font-weight: bold;
+}
